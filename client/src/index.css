@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-colors duration-200;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-600 text-white hover:bg-primary-700 focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-200 text-gray-700 hover:bg-gray-300 focus:ring-2 focus:ring-gray-500 focus:ring-offset-2;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg shadow-sm border border-gray-200 p-6;
+  }
+  
+  .sidebar-item {
+    @apply flex items-center px-4 py-3 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white rounded-lg transition-colors duration-200;
+  }
+  
+  .sidebar-item.active {
+    @apply bg-primary-50 dark:bg-primary-900 text-primary-700 dark:text-primary-300 border-r-2 border-primary-600 dark:border-primary-400;
+  }
+
+  /* Custom dropdown styling that matches the modern card aesthetic */
+  .form-select {
+    @apply w-full px-4 py-3 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg text-sm text-gray-900 dark:text-white
+           transition-all duration-200 ease-in-out
+           hover:border-gray-300 dark:hover:border-gray-500 hover:shadow-sm
+           focus:border-primary-500 focus:ring-2 focus:ring-primary-500 focus:ring-opacity-50
+           disabled:bg-gray-50 dark:disabled:bg-gray-800 disabled:text-gray-500 dark:disabled:text-gray-400 disabled:cursor-not-allowed
+           appearance-none cursor-pointer;
+  }
+
+  .form-label {
+    @apply block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2;
+  }
+
+  /* Custom dropdown arrow */
+  .form-select-wrapper {
+    @apply relative;
+  }
+
+  .form-select-wrapper::after {
+    content: '';
+    @apply absolute right-4 top-1/2 transform -translate-y-1/2 w-0 h-0 
+           border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-400 
+           pointer-events-none transition-transform duration-200;
+  }
+
+  .form-select-wrapper:focus-within::after {
+    @apply border-t-primary-500;
+  }
+}

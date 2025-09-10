@@ -1,0 +1,58 @@
+{
+  "system": {
+    "maintenanceMode": false,
+    "maintenanceMessage": "Testing maintenance mode",
+    "logLevel": "info",
+    "healthCheckInterval": 30000,
+    "maxLogFiles": 5,
+    "maxLogSize": "5MB"
+  },
+  "database": {
+    "maxConnections": 10,
+    "connectionTimeout": 30000,
+    "queryTimeout": 60000
+  },
+  "camera": {
+    "updateInterval": 60000,
+    "maxConcurrentDownloads": 3,
+    "retryAttempts": 3,
+    "retryDelay": 5000
+  },
+  "ai": {
+    "batchSize": 10,
+    "processingInterval": 300000,
+    "maxConcurrentAnalysis": 2,
+    "confidenceThreshold": 0.7
+  },
+  "storage": {
+    "maxImageAge": 30,
+    "compressionQuality": 80,
+    "maxImageSize": "10MB",
+    "cleanupInterval": 86400000
+  },
+  "analytics": {
+    "vehicleCountAggregationInterval": 600000
+  },
+  "api": {
+    "rateLimit": {
+      "windowMs": 900000,
+      "maxRequests": 100
+    },
+    "cors": {
+      "enabled": true,
+      "origins": [
+        "http://localhost:3000",
+        "http://localhost:3001"
+      ]
+    }
+  },
+  "monitoring": {
+    "metricsEnabled": true,
+    "alertingEnabled": true,
+    "performanceThresholds": {
+      "responseTime": 1000,
+      "memoryUsage": 90,
+      "cpuUsage": 80
+    }
+  }
+}
